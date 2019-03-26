@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import AddBook from "./components/AddBook.component";
-import EditBooks from "./components/EditBooks.component";
+import SearchBooks from "./components/SearchBooks.component";
 import BookList from "./components/BookList.component";
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       <Router>
         <div className="App">
               <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Google Books API</a>
+                <Link to="/" class="navbar-brand">Google Books API</Link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -27,7 +27,7 @@ class App extends Component {
                         <Link to="/create" class="nav-link">Add Book</Link>
                       </li>
                       <li class="nav-item">
-                        <Link to="/edit/:id" class="nav-link">Edit Books</Link>
+                        <Link to="/search/:id" class="nav-link">Search Books</Link>
                       </li>
                     </ul>
                     <form class="form-inline">
@@ -38,7 +38,7 @@ class App extends Component {
             </nav>
               <h2>Books!</h2>
         <Route path="/" exact component={BookList} />
-        <Route path="/edit/:id" component={EditBooks} />
+        <Route path="/search/:id" component={SearchBooks} />
         <Route path="/create" component={AddBook} />
         </div>
       </Router>
